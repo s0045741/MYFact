@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+E:\THEFACTORY_CODEBASE\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2164376491.index
+1858809443.index
+2139860293.index
+3535875960.index
+4103976391.index
+2188345635.index

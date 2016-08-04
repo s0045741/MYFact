@@ -1,0 +1,354 @@
+@media only screen and (max-width:320px)
+{
+	#searchDropDown {
+    width: 62% !important;
+}
+	.apprialsHeaderSearchDropDropDown {
+    margin-right: 15% !important;
+}
+apprialsHeadingText h2 {
+    margin-left: 20% !important;
+}
+
+}
+
+@media only screen and (max-width:479px)
+{.popupLeftSpan {
+    font-size: 12px !important;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    width: 35%;
+    margin-left: 0px !important;
+}
+	.apprisalMiles {
+    text-align: left;
+    margin-left: 15% !important;
+}
+	.appraisalImagesThumb {
+    height: 50px !important;
+    margin-left: 40% !important;
+    width: 50px !important;
+    border-radius: 60px;
+    position: relative;
+    margin-top: 25px !important;
+}
+	#apprisalMiles {
+    text-align: center !important;
+    margin-left: -10% !important;
+}
+	#transmitionType
+	{
+	margin-left: 50%;
+	}
+	#transmitionType7
+	{
+	margin-left: 50%;
+	}
+.apprialsPadding {
+    padding: 0px !important;
+    max-width: 100% !important;
+}
+  .apprialTextColor
+   {
+	font-weight: bold;
+    font-size: 13px !important;
+	}
+	.apppraisalLongWidth
+	{
+	/* max-width: 100% !important; */
+	}
+	.popup-container .popup {
+    width: 95%;
+	}
+	#searchDropDown {
+    margin-left: 40px;
+	}
+	.apprisalSearchRightMargin
+{
+	margin-right: 0px;
+}
+	.apprialsViewBackground {
+    
+    margin-top: -130px;
+    left: 40%;
+   
+}
+	.appraisalButton {
+    min-height: 36px !important;
+    font-size: 10px !important;
+    width: 100%;
+}
+	.loadingImgStyle {
+    position: fixed;
+    margin-left: 45%;
+    margin-top: 200px;
+	}
+	.apprisalBorder {
+   
+    width: 350%;
+}
+	#apprialsHeadingText h2 {
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 9px;
+    margin-left: 15%;
+}
+	#apprialsData img {
+   width: 115px;
+    height: 115px;
+   }
+
+	.back-text span {
+    color: white !important;
+   display:none !important;
+}
+	button.back-button {
+    display: block;
+    margin-right: -10px !important;
+	}
+	.bar-stable .button.button-clear {
+    color: white !important;
+    font-size: 17px !important;
+}
+	.apprialsHeaderSearchDropDropDown1 {
+    margin-left: 50%;
+}
+	.left-buttons {
+    width: 85%;
+    overflow: hidden !important;
+}
+ .buttons-left {
+    width: 85%;
+    overflow: hidden !important;
+} 
+.apprialsHeaderSearchDropDropDown {
+    margin-right: 10%;
+}
+#searchDropDown {
+    width: 64%;
+}
+	.responsiveLeftMargin
+	{
+	max-width: 0% !important;
+    margin-left: 5%;
+	}
+	.apprialsMobileheading
+	{
+	
+    font-weight: bold;
+    margin-left: -30px;
+	}
+.apprialDropDown {
+    
+    width: 97%;
+}
+.apprialsLockLeftMargin
+{
+	margin-left:0%;
+}
+.apprialsViewBackground {
+    width: 50%;
+}
+.apprialsHeaderTextBox {
+    margin-left: 5px;
+}
+
+
+}
+
+
+@media (min-width:479px) and (max-width:600px)
+{
+	.apprialsHeaderSearchDropDropDown {
+    margin-right: 10% !important;
+}
+#searchDropDown {
+    width: 82% !important;
+}
+#apprialsHeadingText h2 {
+    margin-left: 25px !important;
+}
+.apprialsViewBackground {
+    width: 30% !important;
+    left: 55% !important;
+}
+
+}
+
+
+
+@media (min-width:480px) and (max-width:766px)
+{
+	.appraisalImagesThumb {
+    height: 100px !important;
+    margin-left: 20% !important;
+    width: 100px !important;
+    border-radius: 60px;
+    position: relative;
+    margin-top: 0px !important;
+}
+	#transmitionType7
+	{
+	margin-left: 20%;
+	}
+	#apprisalMiles {
+    text-align: center !important;
+    margin-left: -10% !important;
+}
+	#transmitionType
+	{
+	margin-left: 20%;
+	}
+	.apprialTextColor
+   {
+	font-weight: bold;
+    font-size: 14px !important;
+	}
+	.popup-container .popup {
+    width: 75%;
+	}
+	.apprisalSearchRightMargin
+{
+	margin-right: 0px;
+}
+	.loadingImgStyle {
+    position: fixed;
+    margin-left: 45%;
+    margin-top: 150px;
+	}
+	.apprisalBorder {
+    width: 250%;
+}
+	.back-text span {
+    color: white !important;
+   display:none !important;
+}
+	button.back-button {
+    display: block;
+    margin-right: -10px !important;
+	}
+	.bar-stable .button.button-clear {
+    color: white !important;
+    font-size: 0px !important;
+}
+	.left-buttons {
+    width: 94%;
+    overflow: hidden !important;
+}
+ .buttons-left {
+    width: 94%;
+    overflow: hidden !important;
+} 
+.apprialsHeaderSearchDropDropDown {
+    margin-right: 5%;
+}
+#searchDropDown {
+    width: 81%;
+}
+
+	.apprialDropDown {
+    
+    width: 98%;
+}
+.apprialsViewBackground {
+    width: 25%;
+}
+	
+}
+
+@media(min-width:767px) and (max-width:990px)
+{
+	.appraisalImagesThumb {
+    height: 100px !important;
+    margin-left: 20% !important;
+    width: 100px !important;
+    border-radius: 60px;
+    position: relative;
+    margin-top: 0px !important;
+}
+	.popup-container .popup {
+    width: 50%;
+	}
+	.apprisalSearchRightMargin
+{
+	margin-right:0px;
+}
+	.loadingImgStyle {
+    position: fixed;
+    margin-left: 45%;
+    margin-top: 300px;
+	}
+	.apprisalBorder {
+    width: 250%;
+}
+	.back-text span {
+    color: white !important;
+   display:none !important;
+}
+	.apprialDropDown {
+    
+    width: 98%;
+}
+.apprialsViewBackground {
+    width: 25%;
+}
+	.left-buttons {
+    width: 95%;
+    overflow: hidden !important;
+}
+ .buttons-left {
+    width: 95%;
+    overflow: hidden !important;
+} 
+.apprialsHeaderSearchDropDropDown {
+    margin-left: 80%;
+}
+#searchDropDown {
+    width: 83%;
+}
+
+}
+@media(min-width:991px) and (max-width:1200px)
+{
+	.appraisalImagesThumb {
+    height: 100px !important;
+    margin-left: 20% !important;
+    width: 100px !important;
+    border-radius: 60px;
+    position: relative;
+    margin-top: 0px !important;
+}
+	.popup-container .popup {
+    width: 50%;
+	}
+	.apprisalSearchRightMargin
+{
+	margin-right: 0px;
+}
+	.loadingImgStyle {
+    position: fixed;
+    margin-left: 45%;
+    margin-top: 300px;
+	}
+	.back-text span {
+    color: white !important;
+   display:none !important;
+}
+	.left-buttons {
+    width: 98%;
+    overflow: hidden !important;
+}
+.buttons-left {
+    width: 98%;
+    overflow: hidden !important;
+}
+.apprialsHeaderSearchDropDropDown {
+   /*  margin-left: 85%; */
+}
+#searchDropDown {
+    width: 87.5%;
+}
+
+}

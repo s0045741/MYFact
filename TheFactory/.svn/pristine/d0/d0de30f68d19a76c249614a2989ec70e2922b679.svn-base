@@ -1,0 +1,286 @@
+.skipPopUpButttonStyle
+{
+	background: lightgray !important;
+    border: 1px solid lightgray !important;
+    width: 75%;
+    color: #333 !important;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.skipPopUpBorder
+{
+	border: 1px solid gray;
+    padding: 20px;
+     background: whitesmoke;
+}
+.skipTextBottomBorder
+{
+	text-align: center;
+    color: #666666;
+    font-size: 16px;
+    font-weight: bold;
+}
+.skipButtonsTopBorder
+{
+	border-bottom: 1px solid gray;
+    padding-bottom: 0px;
+   
+}
+.hideSkipPopUp
+{
+	display:none;
+}
+.showSkipPopUp
+{
+    display: block;
+    position: fixed;
+    z-index: 999999999999999999;
+    width: 100%;
+    left: 25%;
+    top: 50%;
+}
+.popup-buttons .button {
+
+    background-color: gray !important;
+    font-size: 14px !important;
+    color: white !important;
+    font-weight: bold !important;
+    border:1px soolid gray;
+    width:50% !important;
+
+}
+
+.popup-buttons .button:hover {
+
+    background-color: #666666 !important;
+    font-size: 14px !important;
+    color: white !important;
+    font-weight: bold !important;
+     border:1px soolid #666666;
+
+}
+
+.popup-buttons .button.activated {
+
+    background-color: #666666  !important;
+     border:1px soolid #666666;
+ }
+.hideLoadingImg
+{
+	display:none !important;
+}
+.showloadingImg
+{
+	display:block !important;
+}
+.descPopUpTextArea
+{
+	height: 150px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    color: #666666;
+    font-size: 14px;
+    overflow: auto;
+}
+.uploadImagesBtn{
+	vertical-align: top !important;
+    margin-top: 25px !important;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+
+}
+.okButtonStyle
+{
+	background: gray !important;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    width: 50%;
+    left: 25% !important;
+    border:1px solid gray;
+}
+.okButtonStyle:hover
+{
+	background: #666666 !important;
+	border:1px solid #666666;
+}
+.logPopUpBtnStyle
+{
+	background: none;
+    color: #666666;
+    font-size: 14px;
+    border: none;
+    padding: 2px;
+    width: 100%;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+}
+
+.logPopUpBtnStyle1
+{
+	background: none;
+    color: #666666;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    float: left;
+    text-align: left;
+    height: 140px;
+}
+.appraisalImagesThumb{
+	height: 100px;
+    margin-left: 2%;
+    width: 100px;
+    border-radius: 60px;
+}
+.appraisalRightToggle{
+	position: fixed;
+    bottom: 61%;
+    width: 69px;
+    background-color: #FFFFFF !importent;
+    border: 1px solid #CCCCCC;
+    height: 7%;
+    /* float: right; */
+    margin-left: 82%;
+}
+.appraisalRightToggle1{
+	position: fixed;
+    bottom: 54%;
+    width: 69px;
+    background-color: #FFFFFF !importent;
+    border: 1px solid #CCCCCC;
+    height: 7%;
+    /* float: right; */
+    margin-left: 82%;
+}
+.appraisalRightToggle2{
+	position: fixed;
+    bottom: 47%;
+    width: 69px;
+    background-color: #FFFFFF !importent;
+    border: 1px solid #CCCCCC;
+    height: 7%;
+    /* float: right; */
+    margin-left: 82%;
+}
+.appraisalRightToggleButton{
+	background: #666666 !important;
+    border: 1px solid #666666 !important;
+    width: 100%;
+    float: right;
+    position: relative;
+    height: auto;
+    color: white !important;
+    margin-top: 5px;
+    margin-right: 0px;
+    font-size: 14px;
+}
+.blockBookPopUpBackground
+{
+	float: right;
+    /* padding-bottom: 31px; */
+    /* padding-top: 14px; */
+    position: fixed;
+    top: 25%;
+    right: 0px;
+    z-index: 99999999999999;
+    width: auto;
+    height: 190px;
+    background: #eee;
+    border: 1px solid #eee;
+    
+}
+.blockBookPopUpHeight
+{
+	height:60px;
+	
+}
+.popUpCloseButton
+{
+	 float: right;
+    background: none;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    
+}
+.scanTextTopMargin
+{
+	position: absolute;
+    margin-top: 40px;
+}
+.apprisalMiles
+{
+	text-align: left;
+    margin-left: 3%;
+}
+.popupLeftSpan{
+	 font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    width: 35%;
+    margin-left: 30px;
+}
+.popupMiddleSpan 
+{
+	width: 10%;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+}
+.popupRightSpan{
+	font-weight: bold;
+    font-size: 14px;
+    float: left;
+    width: 40%;
+    text-align: left;
+    margin-left: 30px;
+}
+.appraisalLongPressPopUp
+{
+	position: absolute;
+}
+.appraisalRowPadding
+{
+	padding: 0px !important;
+}
+.appraisalVinButton
+{
+	    display: inline;
+    float: left;
+    position: relative;
+    top: 0px;
+    min-height: 25px !Important;
+    min-width: 20px !important;
+    background: #666666;
+    color: #fff;
+    left: -100%;
+    margin: 0px;
+    line-height: 30px !important;
+}
+.appraisalVinButton:hover
+{
+	    display: inline;
+    float: left;
+    position: relative;
+    top: 0px;
+    min-height: 25px !Important;
+    min-width: 20px !important;
+    background: #666666;
+    color: #fff;
+    left: -100%;
+    margin: 0px;
+    line-height: 30px !important;
+}

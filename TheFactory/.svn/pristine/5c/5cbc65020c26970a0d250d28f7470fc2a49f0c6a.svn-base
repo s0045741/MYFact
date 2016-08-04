@@ -1,0 +1,244 @@
+<ion-view>
+
+<ion-nav-buttons side="left">
+      <button class = "button button-icon icon ion-navicon homeHeaderBotton apprialsHeaderMenu" menu-toggle = "left" ng-click="toggleLeftSideMenu()">
+      </button>
+       <div class="col-90">
+       <input type = "text" class = "col apprialsHeaderTextBox" style = "" ng-model="omeSearchBox">
+       <i class="buttton ion-android-arrow-dropdown apprialsHeaderSearchDropDropDown" ng-click="searchDropDown()"></i>
+       </div>
+</ion-nav-buttons>  
+    
+   
+    <ion-nav-buttons side="right ">
+    <button class="button ion-android-search homeHeaderBotton apprialsHeaderSearchIcon searchBtn"></button>
+   
+      <button class="button ion-android-more-vertical homeHeaderBotton apprialsHeaderSearchIcon">
+      </button>
+      
+    </ion-nav-buttons>  
+    
+  <div class="row firstDisplaySearchDropDown" id="searchDropDown">
+
+<div class="col-10">
+
+</div>
+
+
+<div class="col">
+
+<div class="apprialsBackgroundPadding">
+
+<ion-list>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalYear" id="searchAppraisalYear" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in appraisalYear">
+</select> 
+
+</ion-item>
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalMake" id="searchAppraisalMake" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in searchAppraisalMake">
+</select>
+
+</ion-item>
+
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalModel" id="searchAppraisalModel" ng-model="selectedName" ng-options="item for item in searchAppraisalModel">
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown">
+<option>DATE</option>
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalSalesMan" id="searchAppraisalSalesMan" ng-model="selectedName" ng-options="item for item in searchAppraisalSalesMan">
+</select>
+
+
+</ion-item>
+
+</ion-list>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+  <!--  Block Book PopUp Start -->
+    
+    <div class="row"  ng-show = "isAppraisalEditFlow()">
+  	<div class="col-67"></div>
+  	<div class="col-33 blockBookPopUpBackground">
+  	
+  	<div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">BB</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Save</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Cancel</button>
+   </div>
+  
+  
+  </div>
+  </div>
+  
+  <!-- Block Book PopUp End -->
+ <ion-content ng-click="hideSearchDropDown()">
+ 
+ 
+ <ion-list>
+ 
+ <ion-item class="item-remove-animate">
+   <div class = "row" style = "margin-top:5px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   				<span class = "imgSpan scanTextTopMargin">1) Front Left Angle&nbsp;</span>
+   				</div> 
+   				
+   				<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{frontleftangle}}" class = "appraisalImagesThumb" id = "frontLeftAnglePic" ng-model = "frontLeftAnglePic">
+   		 	 	<input type = "hidden" name = "frontLeftAngleHidden" ng-model = "frontLeftAngleHidden" id = "frontLeftAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	 ng-show = "isBrowser()" ng-click = "takePicture('frontleftangle')"> Camera </button>
+   		 	 	<label class="btn btn-default btn-file" title="Upload Front Left Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn"> 
+    <input type="file" style="display: none;" onchange="angular.element(this).scope().uploadFile(this.files,'frontleftangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   		<span class = "imgSpan scanTextTopMargin">2) Front Right Angle&nbsp;</span> 
+   		</div>
+   		<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{frontrightangle}}" class = "appraisalImagesThumb" id = "frontRightAnglePic" ng-model = "frontRightAnglePic">
+   				<input type = "hidden" name = "frontRightAngleHidden" ng-model = "frontRightAngleHidden" id = "frontRightAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	ng-click = "takePicture('frontrightangle')" ng-show = "isBrowser()"> Camera </button>
+   		 	 	
+   		 	 <label class="btn btn-default btn-file" title="Upload Front Right Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn"> 
+    <input type="file" style="display: none;" onchange="angular.element(this).scope().uploadFile(this.files,'frontrightangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   		<span class = "imgSpan scanTextTopMargin">3) Rear Left Angle  &nbsp;</span> 
+   		</div>
+   		<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{rearleftangle}}" id = "rearLeftAnglePic" ng-model = "rearLeftAnglePic" class = "appraisalImagesThumb">
+   		 	 	<input type = "hidden" name = "rearLeftAngleHidden" ng-model = "rearLeftAngleHidden" id = "rearLeftAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	ng-click = "takePicture('rearleftangle')" ng-show = "isBrowser()"> Camera </button>
+	<label class="btn btn-default btn-file " title="Upload Rear Left Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn">
+     <input type="file" style="display: none;" name = "file" onchange="angular.element(this).scope().uploadFile(this.files,'rearleftangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   		<span class = "imgSpan scanTextTopMargin">4) Rear Right Angle &nbsp;</span> 
+   		</div>
+   		<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{rearrightangle}}" class = "appraisalImagesThumb" id = "rearRightAnglePic" ng-model = "rearRightAnglePic">
+   		 	 	<input type = "hidden" name = "rearRightAngleHidden" ng-model = "rearRightAngleHidden" id = "rearRightAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	ng-click = "takePicture('rearrightangle')" ng-show = "isBrowser()"> Camera </button>
+			<!-- <input type = "file" class="ion-filing" ng-click="openFileDialog()" ng-show = "!isBrowser()"/> -->
+			<label class="btn btn-default btn-file" title="Upload Rear Right Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn"> 
+    <input type="file" style="display: none;" onchange="angular.element(this).scope().uploadFile(this.files,'rearrightangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class = "col-80">
+   		<span><hr style = "width:80%;margin-left:-5px;"></span>
+   		 	<span>EXTERIOR WALK AROUND</span>
+  		</div>
+   </div>
+   </ion-item>
+   
+ 
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   		
+   		 <div class = "col-5" ng-show = isBrowser()><div class = "errormsg1">
+   			<span ng-bind="oilConditionValidate" style="color:red;"></span>
+   		 </div> </div>
+   		<div class = "col-10" ng-show = isRequired()><div class = "errormsg1">
+   			<span ng-bind="oilConditionValidate" style="color:red;"></span>
+   		 </div> </div>
+   		<div class = "col-80">
+   		<span>Oil Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "oilCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "CLEAN OIL">CLEAN OIL</option>
+   		 		<option value = "DIRTY OIL">DIRTY OIL</option>
+   		 		<option value = "CORRECT LEVEL">CORRECT LEVEL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   
+    <ion-item class="item-remove-animate">
+	<div class = "screen2Buttons">
+	   <div class = "row">
+	 <div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>   		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "gotoApScreen4FromScreen3()">
+  				NEXT </button>
+  		</div>
+  		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "skipFromAppraisalScreen3()">
+  				SKIP </button>
+  		</div>
+  		</div>
+  		</div>
+  		</ion-item>
+  	</ion-list>
+  </ion-content>
+</ion-view>

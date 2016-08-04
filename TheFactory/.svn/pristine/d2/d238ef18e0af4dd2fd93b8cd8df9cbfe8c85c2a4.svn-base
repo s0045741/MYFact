@@ -1,0 +1,179 @@
+<ion-view  ng-init="loadAppraisalLog()" hide-back-button="true">
+
+<!-- <style type="text/css">
+
+.bar-stable .button.button-clear {
+    display: none;
+}
+
+</style> -->
+
+<ion-nav-buttons side="left">
+      <button class = "button button-icon icon ion-navicon homeHeaderBotton apprialsHeaderMenu" menu-toggle = "left" ng-click="toggleLeftSideMenu()">
+      </button>
+      <div class="col-90">
+       <input type = "text" class = "col apprialsHeaderTextBox" style = "" ng-model="omeSearchBox">
+       <i class="buttton ion-android-arrow-dropdown apprialsHeaderSearchDropDropDown" ng-click="searchDropDown()"></i>
+       </div>
+</ion-nav-buttons>  
+    
+   
+    <ion-nav-buttons side="right ">
+    <button class="button ion-android-search homeHeaderBotton apprialsHeaderSearchIcon searchBtn"></button>
+    <button class="button ion-android-add apprialsLogPlus apprialsHeaderSearchIcon" ng-click = "createNewAppraisal()"></button>
+      <button class="button ion-android-more-vertical homeHeaderBotton apprialsHeaderSearchIcon">
+      </button>
+      
+    </ion-nav-buttons>   
+
+
+
+
+<img src="img/AjaxLoadingImg.gif" alt="" id="apprialsImgLoading" class="loadingImgStyle" style = "display:none;"/>
+
+<img src="img/AjaxLoadingImg.gif" alt="" id="apprialsViewImgLoading" class="loadingImgStyle" style = "display:none;"/>
+
+<img src="img/AjaxLoadingImg.gif" alt="" id="appraisalDeleteProc" class="loadingImgStyle" style = "display:none;"/>
+<img src="img/AjaxLoadingImg.gif" alt="" id="appraisalDraftProc" class="loadingImgStyle" style = "display:none;"/>
+
+<div class="row firstDisplaySearchDropDown" id="searchDropDown">
+
+<div class="col-10">
+
+</div>
+
+
+<div class="col">
+
+<div class="apprialsBackgroundPadding">
+
+<ion-list>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalYear" id="searchAppraisalYear" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in appraisalYear">
+</select> 
+
+</ion-item>
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalMake" id="searchAppraisalMake" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in searchAppraisalMake">
+</select>
+
+</ion-item>
+
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalModel" id="searchAppraisalModel" ng-model="selectedName" ng-options="item for item in searchAppraisalModel">
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown">
+<option>DATE</option>
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalSalesMan" id="searchAppraisalSalesMan" ng-model="selectedName" ng-options="item for item in searchAppraisalSalesMan">
+</select>
+
+
+</ion-item>
+
+</ion-list>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<ion-content ng-click="hideSearchDropDown()"> 
+
+
+
+
+
+
+<!-- <div class="row firstDisplaySearchDropDown" style="" id="displayPopUp">
+
+
+ <div class="col">
+
+<div class="apprialsViewBackground">
+
+<p class="apprialsViewAnchor">Open</p>
+<p class="apprialsViewAnchor">Edit</p>
+<p class="apprialsViewAnchor">Delete</p>
+<p class="apprialsViewAnchor">Set FollowUp</p>
+<p class="apprialsViewAnchor">Move To Inventory</p>
+
+
+</div>
+
+</div> 
+
+</div> -->
+
+
+
+
+<ion-list>
+
+<ion-item>
+
+<div class="row">
+
+
+<div class="col-25 apprialsLockLeftMargin" id="apprialsData" ng-model="picName">
+
+
+<ul ng-repeat="name in picName track by $index" class="apprisalBorder" on-hold="displayPopup(picName.length, $index)">
+<li class="appraisalLongPressPopUp"><img src = "img/car.png"></img></li>
+<li id="rightClickPopUp{{name}}"></li>
+</ul>
+
+
+
+</div>
+
+<div class="col-80" id="apprialsHeadingText" ng-model="apprisalLogText">
+
+
+</div>
+
+</div>
+
+
+
+</ion-item>
+
+
+</ion-list>   
+
+
+
+
+
+
+
+
+
+</ion-content>
+</ion-view>
+
+
+

@@ -1,0 +1,389 @@
+.errormsg{
+	position: relative;top: 43px;float: left;left: 11%;
+}
+
+.errormsg1{
+	position: relative;top: 64px;float: left;left: 11%;
+}
+
+.errormsg2{
+       position: relative;
+    top: 60px;
+    float: left;
+    left: 100%;
+    color:red;
+}
+
+#apprisalMiles
+{
+	    text-align: left;
+    margin-left: 3%;
+}
+.apprisalSearchRightMargin
+{
+	margin-right: 15px;
+}
+#apprialsHeadingText ul
+{
+	height: 140px;
+    margin-top: 0px;
+}
+.bar-stable .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: white !important;
+    font-size: 15px;
+}
+
+textarea
+{
+	padding:10px;
+}
+
+.apprisalBorder
+{
+	border-bottom: 1px solid #f3f3ed;
+    width: 180%;
+    height: 145px;
+ }
+.tab-nav span
+{
+	color: #666666;
+    font-size: 11px !important;
+} 
+
+.back-text span {
+    color: white !important;
+   
+}
+.loadingImgStyle
+{
+	position: fixed;
+    margin-left: 45%;
+    margin-top: 15%;
+    z-index: 999999999999;
+}
+.apprialsHeaderSearchDropDropDown1 {
+    color: white !important;
+    font-size: 30px;
+    position: relative;
+    float: right;
+    z-index: 9999999;
+    margin-right: 2%;
+    margin-top: -32px;
+}
+.longPressPopup
+{
+	display:none;
+}
+
+.firstDisplaySearchDropDown
+{
+	display:none;
+}
+.hideSearchDropDown
+{
+	display:none;
+}
+.displaySearch
+{
+	display:block;
+}
+.displaylongPressSearchDropDown
+{
+	display:block;
+}
+[nav-bar-transition="android"] [nav-bar="active"] .bar,
+  [nav-bar-transition="android"] [nav-bar="entering"] .bar {
+    background: gray !important;  
+    }
+input[type="checkbox"]{
+    width:19px;
+    height:19px;
+    cursor:pointer;
+}
+
+.AppraisalTextbox{
+	    height: 40px !important;
+    padding-left: 10px !important;
+    background: #eee !important;
+    font-size: 13px !important;
+    color: #666666 !important;
+    border: 1px solid #eee !important;
+    border-radius: 2px !important;
+}
+
+.HomePageComponents{
+	background: #eee;
+    border-radius:5px;
+    max-width: 63.4%;
+    font-size: 14px;
+}
+.homeButtons{
+	//margin-top:10px;
+	margin-bottom: 15px;
+	
+}
+.screen2Buttons{
+	margin-top:1%;
+}
+.appraisalButton{
+	min-height: 36px !important;
+    font-size: 15px;
+    width:100%;
+}
+.homeHeaderBotton{
+	font-size: 28px !important;
+	border-color: #f8f8f8  !important;
+}
+.scannerDiv{
+	margin-left: -15% !important;
+}
+.scannerImg{
+	height: 36px;
+    width: 49px;
+    margin-bottom: -2px;
+    margin-top: 7px;
+}
+.AppraisalSelect{
+	   width: 100%;
+    background: #eee;
+    margin-bottom: -1%;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    margin-left: -2px;
+    height: 40px;
+    color: #666666;
+}
+.imgSpan{
+	vertical-align: 35px;
+	    
+}
+span{
+	color:#666666;
+	font-size: 13px;
+}
+.apScreen2Div{
+	margin-top: -5px !important;
+}
+
+ .buttons-left{
+	width:100%;
+	overflow:hidden !important;
+} 
+.left-buttons{
+	width:100%;
+	overflow:hidden !important;
+}
+.headerSearchBox{
+	background: #eee;
+	padding-left:10px !important;;
+}
+
+.apprialDropDown
+{
+	background: #eee;
+    margin-bottom: -1%;
+    border: 0px;
+    border-radius: 2px;
+    margin-left: 0px;
+    height: 40px;
+    color: #666666;
+    width: 100%;
+}
+.apprialTextColor
+{
+	    font-weight: bold;
+    font-size: 16px;
+    color: #666666 !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    height: auto !important;
+    background: none !important;
+   
+}
+.apprialColumnPadding
+{
+	 padding-bottom: 5px !important;
+}
+.apprialsPadding
+{
+	padding: 0px !important;
+}
+.apprialsMobileheading
+{
+	font-size: 22px;
+    font-weight: bold;
+    
+}
+.apprialBlockBookLeftMargin
+{
+	margin-left: 0px;
+    line-height: 30px;
+}
+.apprialsTextLeftMargin
+{
+	margin-left: -5px;
+}
+.apprialsDropDownWidth
+{
+	width: 96%;
+    background: #eee;
+    margin-bottom: 0%;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    margin-left: -2px;
+    height: 40px;
+    color: #666666;
+}
+.apprialsLockLeftMargin
+{
+	margin-left:25%;
+}
+.apprialsLockButtonStyle
+{
+	width: 75%;
+    height: 80px;
+    color: black !important;
+    font-weight: bold;
+}
+
+/* added on 8-07-2016 */
+.apprialsLockLeftMargin
+{
+	margin-left:25%;
+	min-height: 500px;
+}
+.apprialsLockButtonStyle
+{
+	width: 75%;
+    height: auto;
+    color: black !important;
+    font-weight: bold;
+}
+#apprialsData img
+{
+	width: 150px;
+    height: 145px;
+    /* background: #9c87eb; */
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 15px;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+
+#apprialsHeadingText h2
+{
+	    margin-top: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    color: #666666;
+    cursor: pointer;
+
+}
+.apprialsViewBackground
+{
+	background: lightgray;
+    padding: 10px;
+    color: white;
+    width: 150%;
+    border: 1px solid lightgray;
+    float: right;
+    margin-right: 0%;
+    position: relative;
+    margin-top: -140px;
+    z-index: 99;
+    left: 325%;
+  }
+.apprialsViewAnchor
+{
+	border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.appprialsviewDropDown
+{
+	width: 80%;
+    height: 30px;
+    border: 1px solid lightgray;
+    padding-left: 5px;
+    margin-left: 10%;
+    margin-right: 0%;
+}
+.apprialsDropDownBackground
+{
+	background-color: lightgray !important;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.apprialsBackgroundPadding
+{
+	padding-bottom: 100px;
+    background: lightgray;
+    padding-top: 25px;
+}
+
+#searchDropDown
+{
+	position: fixed;
+    z-index: 99999999999999999999;
+    top: 35px;
+    margin-left: 35px;
+    width: 90%;
+}
+.apprialsLogPlus
+{
+	border: none !important;
+    font-size: 22px !important;
+    color: white !important;
+}
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+    background: gray !important;
+}
+.apprialsHeaderMenu
+{
+	color: white !important;
+    border: none !important;
+}
+.apprialsHeaderTextBox
+{
+	background: #666;
+    padding-left: 10px !important;
+    color: white !important;
+}
+.apprialsHeaderSearchIcon
+{
+	background: gray !important;
+    border: none !important;
+    color: white !important;
+    font-size: 26px !important;
+}
+.searchBtn{
+	font-size: 36px !important;
+    margin-top: -3px;
+}
+.apprialsHeaderSearchDropDropDown
+{
+	color: white !important;
+    font-size: 30px;
+    position: relative;
+    float: right;
+    z-index: 9999999;
+    margin-right: 2%;
+    margin-top: -32px;
+    cursor: pointer;
+    }
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+    overflow: hidden !important;
+}
+[nav-bar-transition="android"] [nav-bar="active"] .bar,
+  [nav-bar-transition="android"] [nav-bar="entering"] .bar {
+      overflow: hidden !important;
+    }

@@ -1,0 +1,141 @@
+<ion-view>
+
+<ion-nav-buttons side="left">
+      <button class = "button button-icon icon ion-navicon homeHeaderBotton" menu-toggle = "left" ng-click="toggleLeftSideMenu()">
+      </button>
+    <!--   <input type = "text" class = "col headerSearchBox" ng-model="omeSearchBox" placeholder = "Search..."> -->
+</ion-nav-buttons>  
+    
+   
+    <ion-nav-buttons side="right ">
+    <button class="button ion-android-search homeHeaderBotton"></button>
+      <button class="button ion-android-more-vertical homeHeaderBotton">
+       
+      </button>
+    </ion-nav-buttons>        
+
+ <ion-content>
+ <ion-list>
+ 
+ <!-- <ion-item class="item-remove-animate">
+   <div class = "row" style = "margin-top:15px;">
+   		<div class = "col-10"> </div>
+   		<div class = "col-80">
+   		 	<input type="text" placeholder="ENTER or SCAN"  id='scan_textbox' class="item item-input item-input-wrapper col col-80 AppraisalTextbox" ng-model="vinNumber">  
+  		</div>
+  		<div class = "scannerDiv">
+  			<img src ="img/scan_icon.png" class = "scannerImg" ng-click = "getVINNumber()" id = "scannerImg"
+  			 ng-show = "isBrowser()" onClick="window.location='Navigation://OpenNativeScreen'">
+  		</div>
+   </div>
+   </ion-item>
+  --> 
+  <ion-item class="item-remove-animate">
+   <div class = "row" style = "margin-top:15px;">
+   		<div class = "col-10"> </div>
+   		<div class = "col-80">
+   		 	<input type="text" placeholder="ENTER or SCAN"  id='scan_textbox' class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	ng-model="formData.vinNumber" name = "vinNumber" ng-keyup="verifyVinNumber(formData)">  
+  		</div>
+  		<div class = "scannerDiv">
+  			<img src ="img/scan_icon.png" class = "scannerImg" ng-click = "getVINNumber()" id = "scannerImg"
+  			 ng-show = "isBrowser()" onClick="window.location='Navigation://OpenNativeScreen'">
+  		</div>
+   </div>
+   </ion-item>
+  <ion-item class="item-remove-animate">
+   <div class = "row">
+   		 <div class = "col-10"> </div>
+   		<div class = "col col-80">
+   		 	<input type="text" placeholder="Model" class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	ng-model = "model" id = "appraisalModel">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+   <div class = "row ">
+   		<div class = "col-10"> </div> 
+   		<div class = "col col-80">
+   		 	<input type="text" placeholder="Series" class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	ng-model = "series" id = "appraisalSeries">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+   <div class = "row ">
+   		 <div class = "col-10"> </div>
+   		<div class = "col col-80">
+   		 	<input type="text" placeholder="Miles" class="item item-input item-input-wrapper col col-80 AppraisalTextbox"  
+   		 	ng-model = "miles" id = "appraisalMiles">
+  		</div>
+  		<div class = "scannerDiv">&nbsp;
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+   <div class="row">
+	  <div class = "col-10"> </div>
+	 
+	  <div class="col col-80 HomePageComponents">
+	  	
+	  	<!-- for check boxes -->
+  			 <label ng-repeat="vehicleProperty in vehicleProperties">
+ 
+  <div class = "row ">
+   				<div class = "col-70"> <span> {{vehicleProperty.name}}</span></div>
+ <div class = "col" style = "text-align: right;"> <input
+    type="checkbox"
+    name="selectedFruits[]"
+    value="{{vehicleProperty.name}}"
+    ng-model="vehicleProperty.selected"
+  > </div>
+  </div>
+</label>
+	  </div>
+	  </div>
+	  </ion-item>
+	   <ion-item class="item-remove-animate">
+	  <div class = "row ">
+   		<div class = "col-10"> </div> 
+   		<div class = "col col-80">
+   		 	<input type="text" placeholder="Engine Type" class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	 ng-model = "engineType" id = "appraisalEngineType">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+	 <ion-item class="item-remove-animate">
+	  <div class = "row">
+   		<div class = "col-10"> </div> 
+   		<div class = "col col-80">
+   		 	<input type="text" placeholder="Transmission Type" class="item item-input item-input-wrapper col col-80 AppraisalTextbox"  
+   		 	ng-model = "TransmissionType" id = "appraisalTransmissionType">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+	<div class = "homeButtons">
+	   <div class = "row">
+	   <div class = "col-10"></div>
+   		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "goToTestDriveFromAppraisalHome()">
+  				TEST DRIVE </button>
+  		</div>
+  		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "skipFromAppraisalHome(formData)">
+  				SKIP </button>
+  		</div>
+  		</div>
+  		</div>
+  		</ion-item>
+  	</ion-list>
+   </div>
+  </ion-content>
+</ion-view>

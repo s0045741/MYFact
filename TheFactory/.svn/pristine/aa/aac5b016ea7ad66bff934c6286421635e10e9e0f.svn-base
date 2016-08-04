@@ -1,0 +1,198 @@
+<ion-view>
+
+<ion-nav-buttons side="left">
+      <button class = "button button-icon icon ion-navicon homeHeaderBotton apprialsHeaderMenu" menu-toggle = "left" ng-click="toggleLeftSideMenu()">
+      </button>
+       <div class="col-90">
+       <input type = "text" class = "col apprialsHeaderTextBox" style = "" ng-model="omeSearchBox">
+       <i class="buttton ion-android-arrow-dropdown apprialsHeaderSearchDropDropDown" ng-click="searchDropDown()"></i>
+       </div>
+</ion-nav-buttons>  
+    
+   
+    <ion-nav-buttons side="right ">
+    <button class="button ion-android-search homeHeaderBotton apprialsHeaderSearchIcon searchBtn"></button>
+    
+      <button class="button ion-android-more-vertical homeHeaderBotton apprialsHeaderSearchIcon">
+      </button>
+      
+    </ion-nav-buttons>  
+    
+   <div class="row firstDisplaySearchDropDown" id="searchDropDown">
+
+<div class="col-10">
+
+</div>
+
+
+<div class="col">
+
+<div class="apprialsBackgroundPadding">
+
+<ion-list>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalYear" id="searchAppraisalYear" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in appraisalYear">
+</select> 
+
+</ion-item>
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalMake" id="searchAppraisalMake" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in searchAppraisalMake">
+</select>
+
+</ion-item>
+
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalModel" id="searchAppraisalModel" ng-model="selectedName" ng-options="item for item in searchAppraisalModel">
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown">
+<option>DATE</option>
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalSalesMan" id="searchAppraisalSalesMan" ng-model="selectedName" ng-options="item for item in searchAppraisalSalesMan">
+</select>
+
+
+</ion-item>
+
+</ion-list>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+  <!--  Block Book PopUp Start -->
+    
+    <div class="row"  ng-show = "isAppraisalEditFlow()">
+  	<div class="col-67"></div>
+  	<div class="col-33 blockBookPopUpBackground">
+  	
+  	<div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">BB</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Save</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Cancel</button>
+   </div>
+  
+  
+  </div>
+  </div>
+  
+  <!-- Block Book PopUp End -->
+ <ion-content ng-click="hideSearchDropDown()">
+ 
+ <ion-list>
+ 
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   		<div class = "col-10 errormsg1">
+   			<span ng-bind="WinfShieldDamageValidate" style="color:red;"></span>
+   		 </div>
+   		<div class = "col-80">
+   		<span>WindShield Damage</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id="WinfShieldDamage">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "MINOR CHIP">MINOR CHIP</option>
+   		 		<option value = "LARGE CHIP">LARGE CHIP</option>
+   		 		<option value = "CRACKED, NEEDS REPAIR">CRACKED, NEEDS REPAIR</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   		<div class = "col-10 errormsg1">
+   			<span ng-bind="TyreConditionValidate" style="color:red;"></span>
+   		 </div>
+   		<div class = "col-80">
+   		<span>Tire Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id="TyreCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "ALL FOUR MATCHING">ALL FOUR MATCHING</option>
+   		 		<option value = "MISMATCHED	">MISMATCHED</option>
+   		 		<option value = "EXCELLENT THREAD">EXCELLENT THREAD</option>
+   		 		<option value = "GOOD THREAD">GOOD THREAD</option>
+   		 	</select> 
+  		</div>
+   </div>
+   </ion-item>
+   
+   
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-10"> </div>
+   		<div class = "col-80">
+   		<span>Professional Opinion</span><br>
+   		 	<textarea style = "width:80%;background:#eee;height:100px;padding-lefy:5px;" ng-model="ProfessionalOpenion" id="ProfessionalOpenion"></textarea>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-10"> </div>
+   		<div class = "col-80" style = "font-weight: bold;">
+   		<span>I (User Name) Certify</span><br>
+   		<span>The Information</span><br>
+   		<span>Provided is my</span><br>
+   		<span>Professional Opinion</span><br>
+   		<span>Of this vehicle</span><br>
+   		<span>Condition to the</span><br>
+   		 	<span>Best of my Abilities</span><br>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-10"> </div>
+   		<div class = "col-80">
+   		<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "gotoApScreen6FromScreen5()">
+  				Submit </button>
+  		</div>
+   </div>
+   </ion-item>
+    
+   
+    <!-- <ion-item class="item-remove-animate">
+	<div class = "screen2Buttons">
+	   <div class = "row">
+	<div class = "col-10"> </div>
+   		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "gotoApScreen3FromScreen2()">
+  				NEXT </button>
+  		</div>
+  		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "skipFromAppraisalScreen2()">
+  				SKIP </button>
+  		</div>
+  		</div>
+  		</div>
+  		</ion-item>
+ -->  	</ion-list>
+ </ion-content>
+</ion-view>

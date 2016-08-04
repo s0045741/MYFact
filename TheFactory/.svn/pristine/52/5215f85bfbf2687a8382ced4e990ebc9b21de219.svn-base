@@ -1,0 +1,267 @@
+<ion-view ng-init="appendDynamicDataToApprisalSeventhScreen()">
+
+<ion-nav-buttons side="left">
+      <button class = "button button-icon icon ion-navicon homeHeaderBotton apprialsHeaderMenu" menu-toggle = "left" ng-click="toggleLeftSideMenu()">
+      </button>
+       <div class="col-90">
+       <input type = "text" class = "col apprialsHeaderTextBox" style = "" ng-model="omeSearchBox">
+       <i class="buttton ion-android-arrow-dropdown apprialsHeaderSearchDropDropDown" ng-click="searchDropDown()"></i>
+       </div>
+</ion-nav-buttons>  
+    
+   
+    <ion-nav-buttons side="right ">
+    <button class="button ion-android-search homeHeaderBotton apprialsHeaderSearchIcon searchBtn apprisalSearchRightMargin"></button>
+   <!--  <button class="button ion-android-add apprialsLogPlus apprialsHeaderSearchIcon"></button> -->
+      <button class="button ion-android-more-vertical homeHeaderBotton apprialsHeaderSearchIcon">
+      </button>
+      
+    </ion-nav-buttons>     
+    <img src="img/AjaxLoadingImg.gif" alt="" id="finishApprLoading" class="loadingImgStyle" style = "display:none;"/>
+   <div class="row firstDisplaySearchDropDown" id="searchDropDown">
+
+<div class="col-10">
+
+</div>
+
+
+<div class="col">
+
+<div class="apprialsBackgroundPadding">
+
+<ion-list>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalYear" id="searchAppraisalYear" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in appraisalYear">
+</select> 
+
+</ion-item>
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalMake" id="searchAppraisalMake" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in searchAppraisalMake">
+</select>
+
+</ion-item>
+
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalModel" id="searchAppraisalModel" ng-model="selectedName" ng-options="item for item in searchAppraisalModel">
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown">
+<option>DATE</option>
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalSalesMan" id="searchAppraisalSalesMan" ng-model="selectedName" ng-options="item for item in searchAppraisalSalesMan">
+</select>
+
+
+</ion-item>
+
+</ion-list>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+  <!--  Block Book PopUp Start -->
+    
+    <div class="row"  ng-show = "isAppraisalEditFlow()">
+  	<div class="col-67"></div>
+  	<div class="col-33 blockBookPopUpBackground">
+  	
+  	<div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">BB</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Save</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Cancel</button>
+   </div>
+  
+  
+  </div>
+  </div>
+  
+  <!-- Block Book PopUp End -->
+
+ <ion-content ng-click="hideSearchDropDown()">
+ <ion-list>
+  <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><span style = " " class="apprialsMobileheading">APPRAISE VEHICLE</span></center>
+   		</div>
+  		</div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   		<div class = "col-20 responsiveLeftMargin"> </div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalYear7"  readonly="true"/>
+   				</div>
+   				<div class = "col-67">
+   					<input type="text" class="apprialTextColor" id="appraisalMake7"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   		<div class = "col-20 responsiveLeftMargin"> </div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalModel7"  readonly="true"/>
+   				</div>
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalSeries7"  readonly="true"/>
+   				</div>
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalStyle7"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   		<div class = "col-20 responsiveLeftMargin"> </div>
+   		<div class = "col-80">
+   			<div class = "row appraisalRowPadding">
+   				<div class = "col appraisalRowPadding">
+   					<input type="text" class="apprialTextColor" id="engine_desc7"  readonly="true"/>
+   				</div>
+   				
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   
+    <ion-item>
+   
+   <div class="row appScreen2Div" style="">
+   
+   <div class="col-20 responsiveLeftMargin"></div>
+   <div class="col-80">
+   <div class="row appraisalRowPadding">
+   <div class = "col appraisalRowPadding">
+ <input type="text" class="apprialTextColor" id="transmitionType7"  readonly="true"/>
+   </div>
+   </div>
+   </div>
+ 
+  </div>
+   
+   
+   </ion-item>
+   
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><input type="text" class="apprialTextColor" id="apprisalRefNumber7"  readonly="true"/></center>
+   		</div>
+  		</div>
+   </ion-item>
+
+
+  <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "">
+   		<div class = "col">
+   			<center><input type="text" class="apprialTextColor apprisalMiles" id="apprisalMiles7"  readonly="true"/></center>
+   		</div>
+  		</div>
+   </ion-item>
+   
+    <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-10"> </div>
+   		<div class = "col-80">
+   		<span class="apprialBlockBookLeftMargin">Black Book Value</span><br>
+   		 	<!-- <select class = " item item-input item-input-wrapper  col apprialDropDown" ng-model="BlackBookNumbers" id="BlackBookNumbers">
+   		 		<option value = "none">NONE</option>
+   		 		
+   		 	</select> -->
+   		 	<input type="text" placeholder="Black Book Number" class="item item-input item-input-wrapper col  AppraisalTextbox"  
+   		 	ng-model="BlackBookNumbers" id="BlackBookNumbers"> 
+  		</div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate">
+   <div class ="row responsive" style = "margin-top:-5px;">
+       <div class="col">
+   		<center><span style = "font-size: 20px;font-weight: bold;">Your Value</span></center><br>
+   		</div>
+   		</div>
+   		<div class="row">
+   		<div class="col-10"></div>
+   		<div class = "col-80">
+   			<input type="text" placeholder="Your Value" class="item item-input item-input-wrapper AppraisalTextbox col"  
+   			ng-model="apparaiseValue" id="apparaiseValue">
+   			</div>
+     </div>	
+   		<div class = "row" >
+     <div class = "col-10"></div>
+     <div class = "col col-80">
+       <span ng-bind="YourvalueValidate" style="color:red;"></span>
+    </div>
+   </div>
+  		
+   </ion-item>
+   
+ 
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row">
+   		<div class = "col-20"> </div>
+   		<div class = "col-60">
+   		<button class="button button-small button-dark appraisalButton" style = "" ng-click = "FinishAppraisal('Submitted')">
+  				FINISH </button>
+  		</div>
+  		<div class="col-20"></div>
+   </div>
+   </ion-item> 
+    
+   
+    <!-- <ion-item class="item-remove-animate">
+	<div class = "screen2Buttons">
+	   <div class = "row">
+	<div class = "col-10"> </div>
+   		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "gotoApScreen3FromScreen2()">
+  				YES </button>
+  		</div>
+  		<div class = "col-40">
+   			<button class="button button-small button-dark appraisalButton" style = "width:90%;" ng-click = "skipFromAppraisalScreen2()">
+  				NO </button>
+  		</div>
+  		</div>
+  		</div>
+  		</ion-item> -->
+  	</ion-list>
+ </ion-content>
+</ion-view>

@@ -1,0 +1,1057 @@
+<ion-view>
+
+<ion-nav-buttons side="left">
+      <button class = "button button-icon icon ion-navicon homeHeaderBotton apprialsHeaderMenu" menu-toggle = "left" ng-click="toggleLeftSideMenu()">
+      </button>
+      <div class="col-90">
+       <input type = "text" class = "col apprialsHeaderTextBox" style = "" ng-model="omeSearchBox">
+       <i class="buttton ion-android-arrow-dropdown apprialsHeaderSearchDropDropDown" ng-click="searchDropDown()"></i>
+       </div>
+</ion-nav-buttons>  
+    
+   
+    <ion-nav-buttons side="right ">
+    <button class="button ion-android-search homeHeaderBotton apprialsHeaderSearchIcon searchBtn"></button>
+    
+      <button class="button ion-android-more-vertical homeHeaderBotton apprialsHeaderSearchIcon">
+      </button>
+      
+    </ion-nav-buttons>       
+
+
+
+<div class="row firstDisplaySearchDropDown" id="searchDropDown">
+
+<div class="col-10">
+
+</div>
+
+
+<div class="col">
+
+<div class="apprialsBackgroundPadding">
+
+<ion-list>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalYear" id="searchAppraisalYear" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in appraisalYear">
+</select> 
+
+</ion-item>
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select name="searchAppraisalMake" id="searchAppraisalMake" class="appprialsviewDropDown" ng-model="selectedName" ng-options="item for item in searchAppraisalMake">
+</select>
+
+</ion-item>
+
+
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalModel" id="searchAppraisalModel" ng-model="selectedName" ng-options="item for item in searchAppraisalModel">
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown">
+<option>DATE</option>
+</select>
+
+</ion-item>
+
+<ion-item class="apprialsDropDownBackground">
+
+<select class="appprialsviewDropDown" name="searchAppraisalSalesMan" id="searchAppraisalSalesMan" ng-model="selectedName" ng-options="item for item in searchAppraisalSalesMan">
+</select>
+
+
+</ion-item>
+
+</ion-list>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+<!--  Block Book PopUp Start -->
+    
+    <div class="row" >
+  	<div class="col-67"></div>
+  	<div class="col-33 blockBookPopUpBackground">
+  	
+  	<div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "" ng-click = "readBlackBookDetails()">BB</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "" ng-click="saveAppraisalViewPopUpDisp($scope )">Save</button>
+   </div>
+   <div class="col blockBookPopUpHeight">
+   <button class="button appraisalRightToggleButton" style = "">Cancel</button>
+   </div>
+  
+  
+  </div>
+  </div>
+  
+  <!-- Block Book PopUp End -->
+
+<ion-content ng-click="hideSearchDropDown()">
+
+
+<!-- Apprisal Home Code -->
+
+<ion-list>
+
+  <ion-item class="item-remove-animate">
+   <div class = "row" style = "margin-top:15px;padding-bottom: 11px;">
+   		<div class="col-10"></div>
+   		<div class = "col-80">
+   		<!-- <span>VIN Number</span><br> -->
+   		 	<input type="text" placeholder="ENTER or SCAN" maxlength="17" id='scan_textbox' class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	ng-model="formData.vinNumber" name = "vinNumber" ng-keyup="verifyVinNumber(formData)">  
+  		</div>
+  		<div class = "scannerDiv">
+  			<img src ="img/scan_icon.png" class = "scannerImg" ng-click = "getVINNumber()" id = "scannerImg"
+  			 ng-show = "isBrowser()" onClick="window.location='Navigation://OpenNativeScreen'">
+  		</div>
+   </div>
+   </ion-item>
+  <ion-item class="item-remove-animate">
+   <div class = "row" style = "margin-bottom:11px;padding-bottom: 0px;">
+   			<div class="col-10"></div>
+   		<div class = "col col-80">
+   		<!-- <span>Model</span><br> -->
+   		 	<input type="text" placeholder="Model" class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	ng-model = "model" id = "model">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+   <div class = "row " style = "margin-top:0px;padding-bottom: 11px;">
+   			<div class="col-10"></div>
+   		<div class = "col col-80">
+   		<!-- <span>Series</span><br> -->
+   		 	<input type="text" placeholder="Series" class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	ng-model = "series" id = "series">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+   <div class = "row " style = "margin-top:0px;padding-bottom: 11px;">
+   			<div class="col-10"></div>
+   		<div class = "col col-80">
+   		<!-- <span>Miles</span><br> -->
+   		 	<input type="text" placeholder="Miles" class="item item-input item-input-wrapper col col-80 AppraisalTextbox"  
+   		 	ng-model = "miles" name="miles" id = "miles" ng-pattern="/0-9/">
+  		</div>
+  		<div class = "scannerDiv">&nbsp;
+  		</div>
+   </div>
+   </ion-item>
+    <ion-item class="item-remove-animate">
+   <div class="row">
+	  	<div class="col-10"></div>
+	  <div class="col col-80 HomePageComponents"  style = "min-height: 150px;margin-top: 7px;">
+	<!--  <div style = "margin-top: -25px;">Optional Equipments</div><br> -->
+	  	
+	  	<!-- for check boxes -->
+  			 <label ng-repeat="vehicleProperty in vehicleProperties">
+ 
+  <div class = "row ">
+   				<div class = "col-70"> <span> {{vehicleProperty.name}}</span></div>
+ <div class = "col" style = "text-align: right;">
+  	
+  <input id="{{vehicleProperty.name}}" type="checkbox" value="{{vehicleProperty.name}}" ng-checked="selection.indexOf(vehicleProperty.name) > -1" ng-click="toggleSelection(vehicleProperty.name)" />
+				
+  
+  </div>
+  </div>
+</label>
+	  </div>
+	  </div>
+	  
+	   <div class = "row" ng-show="optEquipment">
+   		<div class = "col-10"></div>
+   		<div class = "col col-80">
+   		 	<span></span>
+  		</div>
+  	 </div>
+	  
+	  </ion-item>
+	   <ion-item class="item-remove-animate">
+	  <div class = "row " style = "margin-top:0px;padding-bottom: 11px;">
+   			<div class="col-10"></div>
+   		<div class = "col col-80">
+   		<!-- <span>Engine Type</span><br> -->
+   		 	<input type="text" placeholder="Engine Type" class="item item-input item-input-wrapper col col-80 AppraisalTextbox" 
+   		 	 ng-model = "engineType" id = "engineType">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+  </ion-item>
+	 <ion-item class="item-remove-animate">
+	
+	  <div class = "row" style = "margin-top:0px;padding-bottom: 11px;">
+   			<div class="col-10"></div>
+   		<div class = "col col-80">
+   		<!-- <span>Transmission Type</span><br> -->
+   		 	<input type="text" placeholder="Transmission Type" class="item item-input item-input-wrapper col col-80 AppraisalTextbox"  
+   		 	ng-model = "TransmissionType" id = "transimissionType">
+  		</div>
+  		<div class = "scannerDiv">
+  		</div>
+   </div>
+   </ion-item>
+
+</ion-list>
+
+
+<!-- Appridsal Home End -->
+
+
+
+<!-- Apprisal Screen2 Start -->
+
+ <ion-list>
+ 
+ <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Exterior Colour</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "exteriorColor">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "BLACK SAPPHIRE">BLACK SAPPHIRE</option>
+   		 		<option value = "CARBON BLACK">CARBON BLACK</option>
+   		 		<option value = "IMOLA RED">IMOLA RED</option>
+   		 	</select>  
+  		</div>
+   </div>
+   
+  </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Interior</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "interior">
+				<option value = "none">--SELECT--</option>
+   		 		<option value = "BLACK FULL LEATHER">BLACK FULL LEATHER</option>
+   		 		<option value = "TAN LEATHER">TAN LEATHER</option>
+   		 		<option value = "TAN FULL LEATHER">TAN FULL LEATHER</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Light Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "lightCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "CHECK ENGINE LIGHT ">CHECK ENGINE LIGHT </option>
+   		 		<option value = "SERVICE ENGINE SOON">SERVICE ENGINE SOON</option>
+   		 		<option value = "ABS">ABS</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>AC Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "acCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "COLD AIR">COLD AIR</option>
+   		 		<option value = "COOL AIR">COOL AIR</option>
+   		 		<option value = "HOT/WARM AIR">HOT/WARM AIR</option>
+   		 		<option value = "NOT OPERATIONAL">NOT OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Front Left Window Status</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "front_left_Window">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "OPERATIONAL">OPERATIONAL</option>
+   		 		<option value = "NOT OPERATIONAL">NOT OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   
+   </ion-item>
+   
+    <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Rear Left Window Status</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "rear_left_Window">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "OPERATIONAL">OPERATIONAL</option>
+   		 		<option value = "NOT OPERATIONAL">NOT OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   
+   </ion-item>
+   
+    <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Front Right Window Status</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "front_right_Window">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "OPERATIONAL">OPERATIONAL</option>
+   		 		<option value = "NOT OPERATIONAL">NOT OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   
+   </ion-item>
+   
+    <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   		<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Rear Right Window Status</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "rear_right_Window">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "OPERATIONAL">OPERATIONAL</option>
+   		 		<option value = "NOT OPERATIONAL">NOT OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Door Locks</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "doorLocks">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "DOOR R-FRONT">POWER LOCK OPERATIONAL</option>
+   		 		<option value = "DOOR L-FRONT">POWER LOCK NOT OPERATIONAL</option>
+   		 		<option value = "DOOR R-REAR">MANUAL LOCK OPERATIONAL</option>
+   		 		<option value = "DOOR L-REAR">MANUAL LOCK NOT OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+    </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Select Roof</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "roof">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "SUNROOF">SUNROOF</option>
+   		 		<option value = "MOONROOF">MOONROOF</option>
+   		 		<option value = "OPERATIONAL">OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Sterio Status</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "sterioStatus">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "FACTORY EQUIPMENT">FACTORY EQUIPMENT</option>
+   		 		<option value = "AFTERMARKET">AFTERMARKET</option>
+   		 		<option value = "OPERATIONAL">OPERATIONAL</option>
+   		 	</select>  
+  		</div>
+   </div>
+  </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Interior Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "interiorCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "CLEAN, FRONTLINE READY">CLEAN, FRONTLINE READY</option>
+   		 		<option value = "GOOD, MINOR REPAIRS NEEDED">GOOD, MINOR REPAIRS NEEDED</option>
+   		 		<option value = "POOR, NEEDS REPAIR">POOR, NEEDS REPAIR</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   
+  
+  	</ion-list>
+  	
+  	<!-- Apprisal Screen2 End -->
+
+
+<!-- Apprisal Screen3 Start -->
+
+ <ion-list>
+ 
+ <ion-item class="item-remove-animate">
+   <div class = "row" style = "margin-top:5px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   				<span class = "imgSpan scanTextTopMargin">1) Front Left Angle&nbsp;</span>
+   				</div> 
+   				
+   				<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{frontleftangle}}" class = "appraisalImagesThumb" id = "frontLeftAnglePic" ng-model = "frontLeftAnglePic">
+   		 	 	<input type = "hidden" name = "frontLeftAngleHidden" ng-model = "frontLeftAngleHidden" id = "frontLeftAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	 ng-show = "isBrowser()" ng-click = "takePicture('frontleftangle')"> Camera </button>
+   		 	 	<label class="btn btn-default btn-file" title="Upload Front Left Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn"> 
+    <input type="file" style="display: none;" onchange="angular.element(this).scope().uploadFile(this.files,'frontleftangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   		<span class = "imgSpan scanTextTopMargin">2) Front Right Angle&nbsp;</span> 
+   		</div>
+   		<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{frontrightangle}}" class = "appraisalImagesThumb" id = "frontRightAnglePic" ng-model = "frontRightAnglePic">
+   				<input type = "hidden" name = "frontRightAngleHidden" ng-model = "frontRightAngleHidden" id = "frontRightAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	ng-click = "takePicture('frontrightangle')" ng-show = "isBrowser()"> Camera </button>
+   		 	 	
+   		 	 <label class="btn btn-default btn-file" title="Upload Front Right Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn"> 
+    <input type="file" style="display: none;" onchange="angular.element(this).scope().uploadFile(this.files,'frontrightangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   		<span class = "imgSpan scanTextTopMargin">3) Rear Left Angle  &nbsp;</span> 
+   		</div>
+   		<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{rearleftangle}}" id = "rearLeftAnglePic" ng-model = "rearLeftAnglePic" class = "appraisalImagesThumb">
+   		 	 	<input type = "hidden" name = "rearLeftAngleHidden" ng-model = "rearLeftAngleHidden" id = "rearLeftAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	ng-click = "takePicture('rearleftangle')" ng-show = "isBrowser()"> Camera </button>
+	<label class="btn btn-default btn-file " title="Upload Rear Left Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn">
+     <input type="file" style="display: none;" name = "file" onchange="angular.element(this).scope().uploadFile(this.files,'rearleftangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class="col-10">
+   		<span class = "imgSpan scanTextTopMargin">4) Rear Right Angle &nbsp;</span> 
+   		</div>
+   		<div class = "col-80">
+   				<img src="img/no_image.png" ng-src="{{rearrightangle}}" class = "appraisalImagesThumb" id = "rearRightAnglePic" ng-model = "rearRightAnglePic">
+   		 	 	<input type = "hidden" name = "rearRightAngleHidden" ng-model = "rearRightAngleHidden" id = "rearRightAngleHidden">
+   		 	 	<button class="button button-small button-dark appraisalButton" style = "width:25%;vertical-align:20px;margin-left:5%;" 
+   		 	 	ng-click = "takePicture('rearrightangle')" ng-show = "isBrowser()"> Camera </button>
+			<!-- <input type = "file" class="ion-filing" ng-click="openFileDialog()" ng-show = "!isBrowser()"/> -->
+			<label class="btn btn-default btn-file" title="Upload Rear Right Angle" ng-show = "!isBrowser()">
+    <img src = "img/file_upload.png" class = "uploadImagesBtn"> 
+    <input type="file" style="display: none;" onchange="angular.element(this).scope().uploadFile(this.files,'rearrightangle')" accept="image/*">
+</label>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   		<div class = "col-5" ng-show = isBrowser()> </div>
+   		<div class = "col-10" ng-show = isRequired()> </div>
+   		<div class = "col-80">
+   		<span><hr style = "width:80%;margin-left:-5px;"></span>
+   		 	<span>EXTERIOR WALK AROUND</span>
+  		</div>
+   </div>
+   </ion-item>
+   
+ 
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   	 <div class = "col-5" ng-show = isBrowser()><div class = "errormsg1">
+   			<span ng-bind="oilConditionValidate" style="color:red;"></span>
+   		 </div> </div>
+   		<div class = "col-10" ng-show = isRequired()><div class = "errormsg1">
+   			<span ng-bind="oilConditionValidate" style="color:red;"></span>
+   		 </div> </div>
+   		<div class = "col-80">
+   		<span>Oil Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id = "oilCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "CLEAN OIL">CLEAN OIL</option>
+   		 		<option value = "DIRTY OIL">DIRTY OIL</option>
+   		 		<option value = "CORRECT LEVEL">CORRECT LEVEL</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+  
+   </ion-list>
+   
+ <!-- 	Apprisal Screen3 End -->
+
+
+<!-- Apprisal Screen4 Start -->
+
+ <ion-list>
+ 
+ <ion-item class="item-remove-animate">
+   <div class = "row " style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-50">
+   			<span style = "vertical-align:5px;" class="">Does the Vehicle have exterior damage?   </span>
+   			 <input type = "checkbox" style = "margin-left:10px;" id = "exteriorDamage" ng-change="damageStateChanged()" ng-model = "exteriorDamageModel">
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate" ng-init="fdsd='selected'">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Front Driver Side Damage</span><br>
+   		 	
+   		 	<select class = "col apprialsDropDownWidth"  id="FrontDriverSideDamage" ng-disabled="isHaveExternalDamage()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 		
+   		 	</select>
+   		 	<input type="hidden" id="FrontDriverSideDamageHidden" ng-model = "FrontDriverSideDamageHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('FrontDriverSideDamage', 'FrontDriverSideDamageHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Rear Driver Side Damage</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="RearDriverSideDamage" ng-disabled = "isHaveExternalDamage()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select>  
+   		 	<input type="hidden" id="RearDriverSideDamageHidden" ng-model = "RearDriverSideDamageHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('RearDriverSideDamage', 'RearDriverSideDamageHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Front Passenger Side Damage</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="FrontPassengerSideDamage" ng-disabled = "isHaveExternalDamage()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select>  
+   		 	<input type="hidden" id="FrontPassengerSideDamageHidden" ng-model = "FrontPassengerSideDamageHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('FrontPassengerSideDamage','FrontPassengerSideDamageHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;padding-bottom:20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Rear Passenger Side Damage</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="RearPassengerSideDamage" ng-disabled = "isHaveExternalDamage()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select>  
+   		 	<input type="hidden" id="RearPassengerSideDamageHidden" ng-model = "RearPassengerSideDamageHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('RearPassengerSideDamage', 'RearPassengerSideDamageHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   <div class = "row apScreen2Div" >
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span class="apprialsTextLeftMargin"><hr/ style = "" class="apprialsTextLeftMargin"></span>
+   		 	<span style = "vertical-align: 5px;" class="apprialsTextLeftMargin">Any Paint work Done ? </span>  
+   		 	<input type = "checkbox" style = "margin-left:10px;" id = "paintWork" ng-change="paintWorkStateChanged()" ng-model = "paintWork">
+
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Paint of Front Driver Side</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="PaintofFrontDriverSide" ng-disabled = "isPaintWorkDone()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select> 
+   		 	<input type="hidden" id="PaintofFrontDriverSideHidden" ng-model = "PaintofFrontDriverSideHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('PaintofFrontDriverSide', 'PaintofFrontDriverSideHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Paint on Rear Driver Side</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="PaintonRearDriverSide" ng-disabled = "isPaintWorkDone()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select>  
+   		 	<input type="hidden" id="PaintonRearDriverSideHidden" ng-model = "PaintonRearDriverSideHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('PaintonRearDriverSide', 'PaintonRearDriverSideHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Paint on Rear Passenger Side</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="PaintonRearPassengerSide" ng-disabled = "isPaintWorkDone()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select> 
+   		 	<input type="hidden" id="PaintonRearPassengerSideHidden" ng-model = "PaintonRearPassengerSideHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('PaintonRearPassengerSide', 'PaintonRearPassengerSideHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   </ion-item>
+
+  <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;padding-bottom:20px;">
+   			<div class="col-10"></div>
+   		<div class = "col-67">
+   		<span>Paint on Front Passenger Side</span><br>
+   		 	<select class = "col apprialsDropDownWidth"  id="PaintonFrontPassengerSide" ng-disabled = "isPaintWorkDone()">
+   		 			<option value = "NO">NO</option>
+   		 		<option value = "YES">YES</option>
+   		 	</select> 
+   		 	<input type="hidden" id="PaintonFrontPassengerSideHidden" ng-model = "PaintonFrontPassengerSideHidden"/>
+  		</div>
+  		<div class = "col-20"> 
+  		<br>
+  		<button class="button button-small button-dark appraisalButton" style = "" 
+  		ng-click="descriptionPopUp('PaintonFrontPassengerSide', 'PaintonFrontPassengerSideHidden')"> 
+  		Description </button>
+  		</div>
+   </div>
+   <div class = "row apScreen2Div" >
+   </div>
+   </ion-item>
+   
+ </ion-list>
+
+
+<!-- Apprisal Screen4 End -->
+
+
+
+<!-- Apprisal Screen5 Start -->
+
+<ion-list>
+ 
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   	<div class="col-10"></div>
+   	<div class = "col-80">
+   		<span>Winf Shield Damage</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id="WinfShieldDamage">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "MINOR CHIP">MINOR CHIP</option>
+   		 		<option value = "LARGE CHIP">LARGE CHIP</option>
+   		 		<option value = "CRACKED, NEEDS REPAIR">CRACKED, NEEDS REPAIR</option>
+   		 	</select>  
+  		</div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:0px;padding-bottom: 20px;">
+   	<div class="col-10"></div>
+   	<div class = "col-80">
+   		<span>Tire Condition</span><br>
+   		 	<select class = "col-80 AppraisalSelect"  id="TyreCondition">
+   		 		<option value = "none">--SELECT--</option>
+   		 		<option value = "ALL FOUR MATCHING">ALL FOUR MATCHING</option>
+   		 		<option value = "MISMATCHED	">MISMATCHED</option>
+   		 		<option value = "EXCELLENT THREAD">EXCELLENT THREAD</option>
+   		 		<option value = "GOOD THREAD">GOOD THREAD</option>
+   		 	</select> 
+  		</div>
+   </div>
+   </ion-item>
+   
+  <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span>Professional Openion</span><br>
+   		 	<textarea style = "width:80%;background:#eee;height:100px;padding-lefy:5px;" ng-model="ProfessionalOpenion" id="ProfessionalOpenion"></textarea>
+  		</div>
+   </div>
+   </ion-item>
+   
+ </ion-list>
+
+
+<!-- Apprisal Scrren5 End -->
+
+
+
+<!-- Apprisal Screen6 Start -->
+
+<!-- <ion-list>
+   <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><span style = " " class="apprialsMobileheading">APPRAISE VEHICLE</span></center>
+   		</div>
+  		</div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   			<div class="col-10"></div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalYear"  readonly="true"/>
+   				</div>
+   				<div class = "col-67">
+   					<input type="text" class="apprialTextColor" id="appraisalMake"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   			<div class="col-10"></div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalModel"  readonly="true"/>
+   				</div>
+   				<div class = "col-20">
+   					<input type="text" class="apprialTextColor" id="apprisalSeries"  readonly="true"/>
+   				</div>
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalStyle"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   			<div class="col-10"></div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="engine_desc"  readonly="true"/>
+   				</div>
+   				<div class = "col-67">
+   					<input type="text" class="apprialTextColor" id="transmitionType"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><input type="text" class="apprialTextColor" id="apprisalRefNumber"  readonly="true"/></center>
+   		</div>
+  		</div>
+   </ion-item>
+
+
+  <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><input type="text" class="apprialTextColor" id="apprisalMiles"  readonly="true"/></center>
+   		</div>
+  		</div>
+   </ion-item>
+   
+  </ion-list> -->
+  	
+  <!-- 	Apprisal Screen6 End -->
+
+<!-- Apprisal Screen7 Start -->
+
+<ion-list>
+ 
+   <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><span style = " " class="apprialsMobileheading">APPRAISE VEHICLE</span></center>
+   		</div>
+  		</div>
+   </ion-item>
+   
+  <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   		<div class = "col-20 responsiveLeftMargin"> </div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalYear7"  readonly="true"/>
+   				</div>
+   				<div class = "col-67">
+   					<input type="text" class="apprialTextColor" id="appraisalMake7"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   		<div class = "col-20 responsiveLeftMargin"> </div>
+   		<div class = "col-80 apprialsPadding">
+   			<div class = "row">
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalModel7"  readonly="true"/>
+   				</div>
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalSeries7"  readonly="true"/>
+   				</div>
+   				<div class = "col-33">
+   					<input type="text" class="apprialTextColor" id="apprisalStyle7"  readonly="true"/>
+   				</div>
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   
+   <ion-item class="item-remove-animate apprialsPadding">
+   <div class = "row apScreen2Div" style = "">
+   		<div class = "col-20 responsiveLeftMargin"> </div>
+   		<div class = "col-80">
+   			<div class = "row appraisalRowPadding">
+   				<div class = "col appraisalRowPadding">
+   					<input type="text" class="apprialTextColor" id="engine_desc7"  readonly="true"/>
+   				</div>
+   				
+   			</div>
+   </div>
+   </div>
+   </ion-item>
+   
+    <ion-item>
+   
+   <div class="row appScreen2Div" style="">
+   
+   <div class="col-20 responsiveLeftMargin"></div>
+   <div class="col-80">
+   <div class="row appraisalRowPadding">
+   <div class = "col appraisalRowPadding">
+ <input type="text" class="apprialTextColor" id="transmitionType7"  readonly="true"/>
+   </div>
+   </div>
+   </div>
+ 
+  </div>
+   
+   
+   </ion-item>
+   
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "margin-top:15px;">
+   		<div class = "col">
+   			<center><input type="text" class="apprialTextColor" id="apprisalRefNumber7"  readonly="true"/></center>
+   		</div>
+  		</div>
+   </ion-item>
+
+
+  <ion-item class="item-remove-animate">
+   <div class = "row responsive" style = "">
+   		<div class = "col">
+   			<center><input type="text" class="apprialTextColor apprisalMiles" id="apprisalMiles7"  readonly="true"/></center>
+   		</div>
+  		</div>
+   </ion-item>
+   
+   
+   <ion-item class="item-remove-animate">
+   <div class = "row apScreen2Div" style = "margin-top:15px;">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   		<span class="apprialBlockBookLeftMargin">Black Book Value</span><br>
+   		 	<!-- <select class = " item item-input item-input-wrapper  col apprialDropDown" ng-model="BlackBookNumbers" id="BlackBookNumbers">
+   		 		<option value = "none">NONE</option>
+   		 		
+   		 	</select> -->
+   		 	<input type="text" placeholder="Black Book Number" class="item item-input item-input-wrapper col  AppraisalTextbox"  
+   		 	ng-model="BlackBookNumbers" id="BlackBookNumbers"> 
+  		</div>
+   </div>
+   </ion-item>
+   <ion-item class="item-remove-animate">
+   <div class ="row responsive" style = "margin-top:-5px;">
+       <div class="col">
+   		<center><span style = "font-size: 20px;font-weight: bold;">Your Value</span></center><br>
+   		</div>
+   		</div>
+   		<div class="row">
+   			<div class="col-10"></div>
+   		<div class = "col-80">
+   			<input type="text" placeholder="Your Value" class="item item-input item-input-wrapper AppraisalTextbox col"  
+   			ng-model="apparaiseValue" id="apparaiseValue">
+   			</div>
+     </div>	
+   	
+ </ion-item>
+   
+</ion-list>
+  	
+  	<!-- Apprisal Screne7 End -->
+  	
+  	<!-- Save And Cancel Buttons -->
+  	
+  	<ion-list>
+  	
+  	<ion-item>
+  
+  	<div class="row">
+  	
+  	<div class="col-10"></div>
+  	
+  	<div class="col-33">
+  	
+  	<button class="button button-small button-dark appraisalButton" style = "">
+  				SAVE </button>
+  				
+  	</div>
+  	<div class="col-10"></div>
+  	
+  	<div class="col-33">
+  	<button class="button button-small button-dark appraisalButton" style = "">
+  				CANCEL </button>
+  	
+   </div>
+  	
+  
+  </div>
+  	
+  
+ </ion-item>
+ 
+  	
+  	
+  	
+  	</ion-list>
+  	
+  	
+  	
+
+
+
+
+
+
+
+
+
+
+</ion-content>
+</ion-view>

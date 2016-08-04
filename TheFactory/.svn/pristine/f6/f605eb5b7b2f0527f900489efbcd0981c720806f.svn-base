@@ -1,0 +1,199 @@
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+var platForm;
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+     
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+	$ionicConfigProvider.tabs.position('bottom'); //bottom
+  $stateProvider
+  // setup an abstract state for the tabs directive
+    .state('tab', {
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'templates/tabs.html'
+  })
+
+  // Each tab has its own nav history stack:
+
+  .state('tab.app_home', {
+    url: '/app_home',
+    views: {
+      'tab-appraisal': {
+       //templateUrl: 'templates/appraisal/appraisal_home.html',
+    	  templateUrl: 'templates/appraisal/appraisal_log.html',
+    	//  templateUrl: 'templates/appraisal/appraisal_log.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  .state('tab.appraisal_log', {
+    url: '/appraisal_log',
+    views: {
+      'tab-appraisal': {
+       //templateUrl: 'templates/appraisal/appraisal_home.html',
+    	  templateUrl: 'templates/appraisal/appraisal_log.html',
+    	//  templateUrl: 'templates/appraisal/appraisal_log.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  .state('tab.appraisal_home', {
+    url: '/appraisal_home',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_home.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  .state('tab.appraisal_scr2', {
+    url: '/appraisal_scr2',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_scr2.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  .state('tab.appraisal_scr3', {
+    url: '/appraisal_scr3',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_scr3.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  .state('tab.appraisal_scr4', {
+    url: '/appraisal_scr4',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_scr4.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  .state('tab.appraisal_scr5', {
+    url: '/appraisal_scr5',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_scr5.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  .state('tab.appraisal_scr6', {
+    url: '/appraisal_scr6',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_scr6.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  .state('tab.appraisal_scr7', {
+    url: '/appraisal_scr7',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_scr7.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+   .state('tab.appraisal_view', {
+    url: '/appraisal_view',
+    views: {
+      'tab-appraisal': {
+        templateUrl: 'templates/appraisal/appraisal_view.html',
+        controller: 'AppraisalController'
+      }
+    }
+  })
+  
+  
+  
+  .state('tab.chats', {
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tab-chats.html',
+          controller: 'ChatsCtrl'
+        }
+      }
+    })
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+  .state('tab.account', {
+    url: '/account',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  })
+  .state('tab.purchase', {
+    url: '/purchase',
+    views: {
+      'tab-purchase': {
+        templateUrl: 'templates/tab-purchase.html',
+        controller: 'PurchaseCtrl'
+      }
+    }
+  })
+  .state('tab.offer', {
+    url: '/offer',
+    views: {
+      'tab-offer': {
+        templateUrl: 'templates/tab-offer.html',
+        controller: 'OfferCtrl'
+      }
+    }
+  });
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/tab/app_home');
+
+});

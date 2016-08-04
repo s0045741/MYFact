@@ -1,0 +1,11 @@
+{
+  "name": "TheFactory",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/blocbbook",
+      "proxyUrl": "https://thefactorymcs-a420278.mobileenv.us2.oraclecloud.com/mobile/custom/TF_BB_OPERATIONS_API/getUsedVehicleDetailsByVIN"
+    }
+  ]
+
+}
